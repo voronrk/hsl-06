@@ -1,0 +1,184 @@
+GuzzleHttp\Client Object
+(
+    [config:GuzzleHttp\Client:private] => Array
+        (
+            [base_uri] => GuzzleHttp\Psr7\Uri Object
+                (
+                    [scheme:GuzzleHttp\Psr7\Uri:private] => https
+                    [userInfo:GuzzleHttp\Psr7\Uri:private] => 
+                    [host:GuzzleHttp\Psr7\Uri:private] => www.cbr-xml-daily.ru
+                    [port:GuzzleHttp\Psr7\Uri:private] => 
+                    [path:GuzzleHttp\Psr7\Uri:private] => /daily_json.js
+                    [query:GuzzleHttp\Psr7\Uri:private] => 
+                    [fragment:GuzzleHttp\Psr7\Uri:private] => 
+                )
+
+            [timeout] => 2
+            [handler] => GuzzleHttp\HandlerStack Object
+                (
+                    [handler:GuzzleHttp\HandlerStack:private] => Closure Object
+                        (
+                            [static] => Array
+                                (
+                                    [default] => Closure Object
+                                        (
+                                            [static] => Array
+                                                (
+                                                    [default] => GuzzleHttp\Handler\CurlMultiHandler Object
+                                                        (
+                                                            [factory:GuzzleHttp\Handler\CurlMultiHandler:private] => GuzzleHttp\Handler\CurlFactory Object
+                                                                (
+                                                                    [handles:GuzzleHttp\Handler\CurlFactory:private] => Array
+                                                                        (
+                                                                        )
+
+                                                                    [maxHandles:GuzzleHttp\Handler\CurlFactory:private] => 50
+                                                                )
+
+                                                            [selectTimeout:GuzzleHttp\Handler\CurlMultiHandler:private] => 1
+                                                            [active:GuzzleHttp\Handler\CurlMultiHandler:private] => 
+                                                            [handles:GuzzleHttp\Handler\CurlMultiHandler:private] => Array
+                                                                (
+                                                                )
+
+                                                            [delays:GuzzleHttp\Handler\CurlMultiHandler:private] => Array
+                                                                (
+                                                                )
+
+                                                            [options:GuzzleHttp\Handler\CurlMultiHandler:private] => Array
+                                                                (
+                                                                )
+
+                                                        )
+
+                                                    [sync] => GuzzleHttp\Handler\CurlHandler Object
+                                                        (
+                                                            [factory:GuzzleHttp\Handler\CurlHandler:private] => GuzzleHttp\Handler\CurlFactory Object
+                                                                (
+                                                                    [handles:GuzzleHttp\Handler\CurlFactory:private] => Array
+                                                                        (
+                                                                        )
+
+                                                                    [maxHandles:GuzzleHttp\Handler\CurlFactory:private] => 3
+                                                                )
+
+                                                        )
+
+                                                )
+
+                                            [parameter] => Array
+                                                (
+                                                    [$request] => <required>
+                                                    [$options] => <required>
+                                                )
+
+                                        )
+
+                                    [streaming] => GuzzleHttp\Handler\StreamHandler Object
+                                        (
+                                            [lastHeaders:GuzzleHttp\Handler\StreamHandler:private] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                )
+
+                            [parameter] => Array
+                                (
+                                    [$request] => <required>
+                                    [$options] => <required>
+                                )
+
+                        )
+
+                    [stack:GuzzleHttp\HandlerStack:private] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [0] => Closure Object
+                                        (
+                                            [parameter] => Array
+                                                (
+                                                    [$handler] => <required>
+                                                )
+
+                                        )
+
+                                    [1] => http_errors
+                                )
+
+                            [1] => Array
+                                (
+                                    [0] => Closure Object
+                                        (
+                                            [parameter] => Array
+                                                (
+                                                    [$handler] => <required>
+                                                )
+
+                                        )
+
+                                    [1] => allow_redirects
+                                )
+
+                            [2] => Array
+                                (
+                                    [0] => Closure Object
+                                        (
+                                            [parameter] => Array
+                                                (
+                                                    [$handler] => <required>
+                                                )
+
+                                        )
+
+                                    [1] => cookies
+                                )
+
+                            [3] => Array
+                                (
+                                    [0] => Closure Object
+                                        (
+                                            [parameter] => Array
+                                                (
+                                                    [$handler] => <required>
+                                                )
+
+                                        )
+
+                                    [1] => prepare_body
+                                )
+
+                        )
+
+                    [cached:GuzzleHttp\HandlerStack:private] => 
+                )
+
+            [allow_redirects] => Array
+                (
+                    [max] => 5
+                    [protocols] => Array
+                        (
+                            [0] => http
+                            [1] => https
+                        )
+
+                    [strict] => 
+                    [referer] => 
+                    [track_redirects] => 
+                )
+
+            [http_errors] => 1
+            [decode_content] => 1
+            [verify] => 1
+            [cookies] => 
+            [idn_conversion] => 1
+            [headers] => Array
+                (
+                    [User-Agent] => GuzzleHttp/6.5.5 curl/7.56.0 PHP/7.2.0
+                )
+
+        )
+
+)
