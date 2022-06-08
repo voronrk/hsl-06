@@ -14,6 +14,14 @@ class AllCurrencies
 
     public function getByKey(string $key, string $value): OneCurrency
     {
-        return current(array_filter($this->data, function($item) use ($key, $value) {return $item->$key == $value;}));
+        $result = current(array_filter($this->data, function($item) use ($key, $value) {return $item->$key == $value;}));
+
+        if (getttype($result) == 'OneCurrency') {
+            return $result;
+        } else {
+            throw Exception('Неверный ключ');
+        }
+
+        
     }
 }

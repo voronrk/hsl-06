@@ -4,6 +4,7 @@ require 'vendor/autoload.php';
 use GuzzleHttp\Client;
 use Currency\OneCurrency;
 use Currency\AllCurrencies;
+use Exception\CurrencyException;
 
 function debug($data)
 {
@@ -12,7 +13,7 @@ function debug($data)
     echo "</pre>";
 }
 
-const BASE_URI = 'https://www.cbr-xml-daily.ru';
+const BASE_URI = 'http://www.cbr-xml-daily.ru';
 const METHOD = '/daily_json.js';
 
 const TLG_URI = 'https://api.telegram.org/bot';
@@ -23,15 +24,22 @@ $client = new Client([
     'base_uri' => BASE_URI,
 ]);
 
-$responce = $client->request('GET', METHOD);
-$data = json_decode($responce->getBody()->getContents())->Valute;
+try {
+    $responce = $client->request('GET', METHOD);
+    $data = json_decode($responce->getBody()->getContents())->Valute;
 
-$currencies = new AllCurrencies();
+    $currencies = new AllCurrencies();
 
-foreach($data as $item) {
-    $currencies->addCurrency(new OneCurrency($item));
-};
-debug($currencies->getByKey('CharCode', 'JPY'));
+    foreach($data as $item) {
+        $currencies->addCurrency(new OneCurrency($item));
+    };
+    // debug($currencies->getByKey('CharCode', 'JPY'));
+    debug($currencies->getByKey('CharCode', 'JPP'));
+} catch (Exception $e) {
+    debug($e->getMessage());
+}
+
+
 
 
 
