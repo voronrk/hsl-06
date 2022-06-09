@@ -8,7 +8,7 @@ use GuzzleHttp\Client;
 class SendMessage
 {
 
-    public function send()
+    public function send($messageText)
     {
         debug($this);
         $url = $this->tlgURI . $this->tlgKey . '/sendMessage';
@@ -21,7 +21,7 @@ class SendMessage
             CURLOPT_URL => $url,
             CURLOPT_POSTFIELDS => [
                 'chat_id' => $this->chatId, 
-                'text' => $this->messageText
+                'text' => $messageText
             ],
         ));
         $result = curl_exec($curl);
@@ -29,9 +29,8 @@ class SendMessage
         return $result;
     }
 
-    public function __construct($messageText, $chatId, $tlgURI, $tlgKey)
+    public function __construct($chatId, $tlgURI, $tlgKey)
     {
-        $this->messageText = $messageText;
         $this->chatId = $chatId;
         $this->tlgURI = $tlgURI;
         $this->tlgKey = $tlgKey;

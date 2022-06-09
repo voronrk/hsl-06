@@ -1,0 +1,388 @@
+Messages\SendMessage Object
+(
+    [chatId] => 878589487
+    [tlgURI] => https://api.telegram.org/bot
+    [tlgKey] => 5411827284:AAEsyM8X47_qIFK0rAIqQvs7KAKMzPdrvsQ
+)
+Currency\AllCurrencies Object
+(
+    [data] => Array
+        (
+            [0] => Currency\OneCurrency Object
+                (
+                    [ID] => R01010
+                    [NumCode] => 036
+                    [CharCode] => AUD
+                    [Nominal] => 1
+                    [Name] => Австралийский доллар
+                    [Value] => 43.3763
+                    [Previous] => 43.7485
+                )
+
+            [1] => Currency\OneCurrency Object
+                (
+                    [ID] => R01020A
+                    [NumCode] => 944
+                    [CharCode] => AZN
+                    [Nominal] => 1
+                    [Name] => Азербайджанский манат
+                    [Value] => 35.4284
+                    [Previous] => 35.8568
+                )
+
+            [2] => Currency\OneCurrency Object
+                (
+                    [ID] => R01035
+                    [NumCode] => 826
+                    [CharCode] => GBP
+                    [Nominal] => 1
+                    [Name] => Фунт стерлингов Соединенного королевства
+                    [Value] => 75.7671
+                    [Previous] => 76.5431
+                )
+
+            [3] => Currency\OneCurrency Object
+                (
+                    [ID] => R01060
+                    [NumCode] => 051
+                    [CharCode] => AMD
+                    [Nominal] => 100
+                    [Name] => Армянских драмов
+                    [Value] => 13.9809
+                    [Previous] => 14.0495
+                )
+
+            [4] => Currency\OneCurrency Object
+                (
+                    [ID] => R01090B
+                    [NumCode] => 933
+                    [CharCode] => BYN
+                    [Nominal] => 1
+                    [Name] => Белорусский рубль
+                    [Value] => 23.2263
+                    [Previous] => 23.4088
+                )
+
+            [5] => Currency\OneCurrency Object
+                (
+                    [ID] => R01100
+                    [NumCode] => 975
+                    [CharCode] => BGN
+                    [Nominal] => 1
+                    [Name] => Болгарский лев
+                    [Value] => 32.8326
+                    [Previous] => 33.4283
+                )
+
+            [6] => Currency\OneCurrency Object
+                (
+                    [ID] => R01115
+                    [NumCode] => 986
+                    [CharCode] => BRL
+                    [Nominal] => 1
+                    [Name] => Бразильский реал
+                    [Value] => 12.3151
+                    [Previous] => 12.7428
+                )
+
+            [7] => Currency\OneCurrency Object
+                (
+                    [ID] => R01135
+                    [NumCode] => 348
+                    [CharCode] => HUF
+                    [Nominal] => 100
+                    [Name] => Венгерских форинтов
+                    [Value] => 16.4959
+                    [Previous] => 16.7096
+                )
+
+            [8] => Currency\OneCurrency Object
+                (
+                    [ID] => R01200
+                    [NumCode] => 344
+                    [CharCode] => HKD
+                    [Nominal] => 10
+                    [Name] => Гонконгских долларов
+                    [Value] => 76.8903
+                    [Previous] => 77.84
+                )
+
+            [9] => Currency\OneCurrency Object
+                (
+                    [ID] => R01215
+                    [NumCode] => 208
+                    [CharCode] => DKK
+                    [Nominal] => 10
+                    [Name] => Датских крон
+                    [Value] => 86.3165
+                    [Previous] => 87.9261
+                )
+
+            [10] => Currency\OneCurrency Object
+                (
+                    [ID] => R01235
+                    [NumCode] => 840
+                    [CharCode] => USD
+                    [Nominal] => 1
+                    [Name] => Доллар США
+                    [Value] => 60.2282
+                    [Previous] => 60.9565
+                )
+
+            [11] => Currency\OneCurrency Object
+                (
+                    [ID] => R01239
+                    [NumCode] => 978
+                    [CharCode] => EUR
+                    [Nominal] => 1
+                    [Name] => Евро
+                    [Value] => 63.938
+                    [Previous] => 64.5699
+                )
+
+            [12] => Currency\OneCurrency Object
+                (
+                    [ID] => R01270
+                    [NumCode] => 356
+                    [CharCode] => INR
+                    [Nominal] => 100
+                    [Name] => Индийских рупий
+                    [Value] => 77.6583
+                    [Previous] => 78.4874
+                )
+
+            [13] => Currency\OneCurrency Object
+                (
+                    [ID] => R01335
+                    [NumCode] => 398
+                    [CharCode] => KZT
+                    [Nominal] => 100
+                    [Name] => Казахстанских тенге
+                    [Value] => 14.0258
+                    [Previous] => 14.1142
+                )
+
+            [14] => Currency\OneCurrency Object
+                (
+                    [ID] => R01350
+                    [NumCode] => 124
+                    [CharCode] => CAD
+                    [Nominal] => 1
+                    [Name] => Канадский доллар
+                    [Value] => 47.9715
+                    [Previous] => 48.5168
+                )
+
+            [15] => Currency\OneCurrency Object
+                (
+                    [ID] => R01370
+                    [NumCode] => 417
+                    [CharCode] => KGS
+                    [Nominal] => 100
+                    [Name] => Киргизских сомов
+                    [Value] => 75.7498
+                    [Previous] => 76.6748
+                )
+
+            [16] => Currency\OneCurrency Object
+                (
+                    [ID] => R01375
+                    [NumCode] => 156
+                    [CharCode] => CNY
+                    [Nominal] => 10
+                    [Name] => Китайских юаней
+                    [Value] => 92.6609
+                    [Previous] => 93.0036
+                )
+
+            [17] => Currency\OneCurrency Object
+                (
+                    [ID] => R01500
+                    [NumCode] => 498
+                    [CharCode] => MDL
+                    [Nominal] => 10
+                    [Name] => Молдавских леев
+                    [Value] => 31.6681
+                    [Previous] => 32.0051
+                )
+
+            [18] => Currency\OneCurrency Object
+                (
+                    [ID] => R01535
+                    [NumCode] => 578
+                    [CharCode] => NOK
+                    [Nominal] => 10
+                    [Name] => Норвежских крон
+                    [Value] => 63.053
+                    [Previous] => 64.7392
+                )
+
+            [19] => Currency\OneCurrency Object
+                (
+                    [ID] => R01565
+                    [NumCode] => 985
+                    [CharCode] => PLN
+                    [Nominal] => 1
+                    [Name] => Польский злотый
+                    [Value] => 14.1261
+                    [Previous] => 14.1832
+                )
+
+            [20] => Currency\OneCurrency Object
+                (
+                    [ID] => R01585F
+                    [NumCode] => 946
+                    [CharCode] => RON
+                    [Nominal] => 1
+                    [Name] => Румынский лей
+                    [Value] => 13.0378
+                    [Previous] => 13.1769
+                )
+
+            [21] => Currency\OneCurrency Object
+                (
+                    [ID] => R01589
+                    [NumCode] => 960
+                    [CharCode] => XDR
+                    [Nominal] => 1
+                    [Name] => СДР (специальные права заимствования)
+                    [Value] => 80.9931
+                    [Previous] => 82.2699
+                )
+
+            [22] => Currency\OneCurrency Object
+                (
+                    [ID] => R01625
+                    [NumCode] => 702
+                    [CharCode] => SGD
+                    [Nominal] => 1
+                    [Name] => Сингапурский доллар
+                    [Value] => 43.7991
+                    [Previous] => 44.2034
+                )
+
+            [23] => Currency\OneCurrency Object
+                (
+                    [ID] => R01670
+                    [NumCode] => 972
+                    [CharCode] => TJS
+                    [Nominal] => 10
+                    [Name] => Таджикских сомони
+                    [Value] => 53.2993
+                    [Previous] => 53.4706
+                )
+
+            [24] => Currency\OneCurrency Object
+                (
+                    [ID] => R01700J
+                    [NumCode] => 949
+                    [CharCode] => TRY
+                    [Nominal] => 10
+                    [Name] => Турецких лир
+                    [Value] => 36.0141
+                    [Previous] => 36.7788
+                )
+
+            [25] => Currency\OneCurrency Object
+                (
+                    [ID] => R01710A
+                    [NumCode] => 934
+                    [CharCode] => TMT
+                    [Nominal] => 1
+                    [Name] => Новый туркменский манат
+                    [Value] => 17.2081
+                    [Previous] => 17.4161
+                )
+
+            [26] => Currency\OneCurrency Object
+                (
+                    [ID] => R01717
+                    [NumCode] => 860
+                    [CharCode] => UZS
+                    [Nominal] => 10000
+                    [Name] => Узбекских сумов
+                    [Value] => 54.5203
+                    [Previous] => 55.2558
+                )
+
+            [27] => Currency\OneCurrency Object
+                (
+                    [ID] => R01720
+                    [NumCode] => 980
+                    [CharCode] => UAH
+                    [Nominal] => 10
+                    [Name] => Украинских гривен
+                    [Value] => 20.4307
+                    [Previous] => 20.6293
+                )
+
+            [28] => Currency\OneCurrency Object
+                (
+                    [ID] => R01760
+                    [NumCode] => 203
+                    [CharCode] => CZK
+                    [Nominal] => 10
+                    [Name] => Чешских крон
+                    [Value] => 25.9582
+                    [Previous] => 26.4534
+                )
+
+            [29] => Currency\OneCurrency Object
+                (
+                    [ID] => R01770
+                    [NumCode] => 752
+                    [CharCode] => SEK
+                    [Nominal] => 10
+                    [Name] => Шведских крон
+                    [Value] => 61.4147
+                    [Previous] => 62.8625
+                )
+
+            [30] => Currency\OneCurrency Object
+                (
+                    [ID] => R01775
+                    [NumCode] => 756
+                    [CharCode] => CHF
+                    [Nominal] => 1
+                    [Name] => Швейцарский франк
+                    [Value] => 61.5327
+                    [Previous] => 62.5067
+                )
+
+            [31] => Currency\OneCurrency Object
+                (
+                    [ID] => R01810
+                    [NumCode] => 710
+                    [CharCode] => ZAR
+                    [Nominal] => 10
+                    [Name] => Южноафриканских рэндов
+                    [Value] => 39.2427
+                    [Previous] => 39.5336
+                )
+
+            [32] => Currency\OneCurrency Object
+                (
+                    [ID] => R01815
+                    [NumCode] => 410
+                    [CharCode] => KRW
+                    [Nominal] => 1000
+                    [Name] => Вон Республики Корея
+                    [Value] => 48.0365
+                    [Previous] => 48.4666
+                )
+
+            [33] => Currency\OneCurrency Object
+                (
+                    [ID] => R01820
+                    [NumCode] => 392
+                    [CharCode] => JPY
+                    [Nominal] => 100
+                    [Name] => Японских иен
+                    [Value] => 45.3184
+                    [Previous] => 46.0988
+                )
+
+        )
+
+)
+Неверный ключ

@@ -14,6 +14,9 @@ class AllCurrencies
 
     public function getByKey(string $key, string $value): OneCurrency
     {
+        debug($key . PHP_EOL);
+        debug($value . PHP_EOL);
+
         $result = current(array_filter($this->data, function($item) use ($key, $value) {return $item->$key == $value;}));
 
         if (gettype($result) == 'OneCurrency') {

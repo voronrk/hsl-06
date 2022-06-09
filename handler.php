@@ -26,72 +26,56 @@ define('METHOD', Config::$method);
 define('TLG_URI', Config::$tldUri);
 define('TLG_KEY', Config::$tlgKey);
 
-const HELP_MESSAGE = '
-    Format of command:
-    1200 USD to RUR
-    there 
-    1200 is summ,
-    USD is sourse currency,
-    RUR is destination currency
-';
+const HELP_MESSAGE = 'Введите код валюты для просмотра текущего курса к рублю';
+// const HELP_MESSAGE = '
+//     Format of command:
+    
+//     1200 USD to RUR
+    
+// there 
+//     1200 is sum,
+//     USD is sourse currency,
+//     RUR is destination currency
+// ';
 
-$incomingMessage = new IncomingMessage(json_decode(file_get_contents('php://input')));
+$incomingData = json_decode(file_get_contents('php://input'));
+$chatId = $incomingData->message->chat->id;
+$messageText = $incomingData->message->text;
 
-if ($incomingMessage->messageText == '/help') {
-    $outgoingMessage = new SendMessage(HELP_MESSAGE, $incomingMessage->chatId, TLG_URI, TLG_KEY);
-    debug($outgoingMessage->send());
-}
-
-debug($incomingMessage);
-
-$test2 = new SendMessage();
-
-$client = new Client([
-    'base_uri' => BASE_URI,
-]);
+$outgoingMessage = new SendMessage($chatId, TLG_URI, TLG_KEY);
 
 try {
-    $responce = $client->request('GET', METHOD);
-    $data = json_decode($responce->getBody()->getContents())->Valute;
+    $incomingMessage = new IncomingMessage($messageText);
 
-    $currencies = new AllCurrencies();
-
-    foreach($data as $item) {
-        $currencies->addCurrency(new OneCurrency($item));
-    };
-    // debug($currencies->getByKey('CharCode', 'JPY'));
-    debug($currencies->getByKey('CharCode', 'JPP'));
+    if ($incomingMessage->isHelp) {
+        $outgoingMessage->send(HELP_MESSAGE);
+    }
+    if ($incomingMessage->isCodeCorrect) {
+        $outgoingMessage->send(getCurrency($messageText));
+    }
 } catch (CurrencyException $e) {
-    debug($e->getMessage());
+    $e->sendToTlg($outgoingMessage, $e->getMessage());
 }
 
+function getCurrency($currencyCode): double
+{
+    debug($currencyCode . PHP_EOL);
+    $client = new Client([
+        'base_uri' => BASE_URI,
+    ]);
 
+    try {
+        $responce = $client->request('GET', METHOD);
+        $data = json_decode($responce->getBody()->getContents())->Valute;
 
+        $currencies = new AllCurrencies();
 
-
-
-// debug(json_decode(file_get_contents('https://www.cbr-xml-daily.ru/daily_json.js')));
-
-// $log = fopen('test.log', 'w');
-// fwrite($log, print_r($client->get(),true));
-// fclose($log);
-
-// $chatId = $data->message->chat->id;
-// $messageText = $data->message->text;
-// $result = curlExec('sendMessage', ['chat_id' => $chatId, 'text' => $messageText]);
-
-// function curlExec($method, $params='') {
-//     $url = 'https://api.telegram.org/bot5411827284:AAEsyM8X47_qIFK0rAIqQvs7KAKMzPdrvsQ/';
-//     $curl = curl_init();
-//     curl_setopt_array($curl, array(
-//         CURLOPT_SSL_VERIFYPEER => 0,
-//         CURLOPT_POST => 1,
-//         CURLOPT_HEADER => 0,
-//         CURLOPT_RETURNTRANSFER => 1,
-//         CURLOPT_URL => $url . $method,
-//         CURLOPT_POSTFIELDS => $params,
-//     ));
-//     $result = curl_exec($curl);
-//     curl_close($curl);
-//     return $result;
-// };
+        foreach($data as $item) {
+            $currencies->addCurrency(new OneCurrency($item));
+        };
+        debug($currencies);
+        return $currencies->getByKey('CharCode', 'USD')['Value'];
+    } catch (CurrencyException $e) {
+        debug($e->getMessage());
+    }
+}
