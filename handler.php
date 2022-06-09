@@ -1,24 +1,50 @@
 <?php
-require 'vendor/autoload.php';
+require_once 'vendor/autoload.php';
+require_once 'Config.php';
 
 use GuzzleHttp\Client;
 use Currency\OneCurrency;
 use Currency\AllCurrencies;
-use Exception\CurrencyException;
+use Currency\CurrencyException;
+use Messages\IncomingMessage;
+use Messages\SendMessage;
+use Config\Config;
 
 function debug($data)
 {
-    echo "<pre>";
-    print_r($data);
-    echo "</pre>";
+    $log = fopen('log.log', 'a');
+    fwrite($log, print_r($data,true));
+    fclose($log);
 }
 
-const BASE_URI = 'http://www.cbr-xml-daily.ru';
-const METHOD = '/daily_json.js';
+// const BASE_URI = 'http://www.cbr-xml-daily.ru';
+// const METHOD = '/daily_json.js';
+// const TLG_URI = 'https://api.telegram.org/bot';
 
-const TLG_URI = 'https://api.telegram.org/bot';
+define('BASE_URI', Config::$baseURI);
+define('METHOD', Config::$method);
+define('TLG_URI', Config::$tldUri);
+define('TLG_KEY', Config::$tlgKey);
 
-$incomingData = json_decode(file_get_contents('php://input'));
+const HELP_MESSAGE = '
+    Format of command:
+    1200 USD to RUR
+    there 
+    1200 is summ,
+    USD is sourse currency,
+    RUR is destination currency
+';
+
+$incomingMessage = new IncomingMessage(json_decode(file_get_contents('php://input')));
+
+if ($incomingMessage->messageText == '/help') {
+    $outgoingMessage = new SendMessage(HELP_MESSAGE, $incomingMessage->chatId, TLG_URI, TLG_KEY);
+    debug($outgoingMessage->send());
+}
+
+debug($incomingMessage);
+
+$test2 = new SendMessage();
 
 $client = new Client([
     'base_uri' => BASE_URI,
@@ -35,7 +61,7 @@ try {
     };
     // debug($currencies->getByKey('CharCode', 'JPY'));
     debug($currencies->getByKey('CharCode', 'JPP'));
-} catch (Exception $e) {
+} catch (CurrencyException $e) {
     debug($e->getMessage());
 }
 

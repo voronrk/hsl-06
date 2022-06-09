@@ -16,10 +16,10 @@ class AllCurrencies
     {
         $result = current(array_filter($this->data, function($item) use ($key, $value) {return $item->$key == $value;}));
 
-        if (getttype($result) == 'OneCurrency') {
+        if (gettype($result) == 'OneCurrency') {
             return $result;
         } else {
-            throw Exception('Неверный ключ');
+            throw new CurrencyException('Неверный ключ');
         }
 
         

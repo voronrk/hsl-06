@@ -1,6 +1,8 @@
 <?php
 
-namespace Exception;
+namespace Currency;
+
+use Exception;
 
 class CurrencyException extends Exception
 {
